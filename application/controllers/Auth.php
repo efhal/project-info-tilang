@@ -14,6 +14,7 @@ class Auth extends CI_Controller
      */
     public function view_index()
     {
+
         $data = [
             'title' => 'Login',
         ];
