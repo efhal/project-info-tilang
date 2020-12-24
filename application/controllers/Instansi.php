@@ -29,6 +29,7 @@ class Instansi extends CI_Controller
     }
     public function view_dokumen()
     {
+
         $params = [
             'title' => 'Dokumen',
             'page_title' => 'Info Dokumen',
