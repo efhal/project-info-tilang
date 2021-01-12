@@ -11,10 +11,20 @@
     <link rel="shortcut icon" href="<?= site_url() ?>assets/images/favicon.ico">
     <?php $this->load->view('parts/style') ?>
     <!-- Datatable css -->
+    <style>
+        body {
+            min-height: 100vh !important;
+            padding-bottom: unset !important;
+        }
+
+        .content-page {
+            min-height: 100vh !important;
+        }
+    </style>
 
 </head>
 
-<body data-sidebar-icon="twotones">
+<body data-sidebar-icon="twotones bg-white">
 
     <!-- Begin page -->
     <div id="wrapper">
@@ -32,50 +42,41 @@
         <!-- Start Page Content here -->
         <!-- ============================================================== -->
 
-        <div class="content-page">
+        <div class="content-page bg-white">
             <div class="content">
 
                 <!-- Start Content-->
                 <div class="container-fluid">
 
                     <!-- start page title -->
-                    <div class="row">
+                    <div class="row mt-3 mt-md-4">
                         <div class="col-12">
                             <!-- Portlet card -->
-                            <div class="card mt-3">
-                                <div class="card-body">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12 col-md-8 offset-md-2 text-center">
-                                                <span class="h6">
-                                                    <b>Selamat datang <br /><span class="text-primary h2"><?= $data_session->nama_lengkap ?></span></b></span><br /><br /> <span class="h6 text-center">Silahkan pilih menu yang anda ingingkan. Atau temukan dokumen yang anda cari.<br />Pastikan Nomor Dokumen dengan Tempat Instansi Cocok
-                                                </span>
-                                            </div>
-                                            <div class="col-12 col-md-6 offset-md-3">
-                                                <small id="" class="form-text text-muted text-center">Masukan Nomor Dokumen yang telah diberikan oleh Petugas/Instansi</small>
-                                                <div class="pt-3 pb-4">
-                                                    <div class="form-group">
-                                                        <input id="no_dokumen" name="no_dokumen" type="text" class="form-control font-weihgt-bold text-center text-dark form-control-lg border-primary rounded-0 border-left-0 border-top-0 border-right-0 " placeholder="Nomor Dokumen" value="1412123231">
-                                                        <div class="mt-3 text-center">
-                                                            <h5 id="show_typing" class="d-none">Cari untuk No Dokumen <b><span id="typing" class="text-primary"></span></b></h5>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group text-center">
-                                                        <button type="button" id="cta_search" class="btn btn-lg btn-block waves-effect waves-light btn-primary mt-1"><i class="fa fa-search mr-1"></i> Cari Berkas</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 col-md-10 offset-md-1">
-                                                <div class="row" id="hasil_cari">
-                                                </div>
-                                            </div>
+                            <div class="col-12 col-md-6" style="height:100vh;">
+                                <div class="card-title">
+                                    <h2 class="font-weight-bold">Formulir Permohonan</h2>
+                                    <p class="font-weight-light">Lengkapi data berikut untuk melakukan permohonan dokumen</p>
+                                </div>
+                                <form class="mt-3">
+                                    <div class="form-row mb-3">
+                                        <div class="col-12 col-md-12">
+                                            <label for="exampleInputEmail1" class="text-dark">Instansi</label>
+                                            <input type="email" class="form-control form-control-lg font-weight-bold text-dark border-left-0 border-top-0 border-right-0 rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
-                                    <!-- end card-body-->
-
-                                </div> <!-- end card-body-->
-                            </div> <!-- end card-->
+                                    <div class="form-row">
+                                        <div class="col-12 col-md-12">
+                                            <label for="exampleInputPassword1" class="text-dark">Nomor Dokumen</label>
+                                            <input type="number" class="form-control form-control-lg font-weight-bold text-dark border-left-0 border-top-0 border-right-0 rounded-0" id="exampleInputPassword1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row mt-4 mt-md-3">
+                                        <div class="col-12 col-md-6 col-lg-3">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">Kirim ajuan</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div> <!-- end col-->
                     </div>
                     <!-- end row -->

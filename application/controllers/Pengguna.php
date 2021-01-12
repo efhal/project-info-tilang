@@ -28,7 +28,7 @@ class Pengguna extends CI_Controller
         $this->load->model('Dokumen_Bukti_Model');
 
         $params = [
-            'title' => 'Info Dokumen',
+            'title' => 'Info Tilang',
             'page_title' => 'Info Dokumen',
             'data_session' => $this->data_session
         ];
