@@ -51,8 +51,8 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        Ajuan Dokumen Tilang Anda ke Kejaksaan Negeri Sleman dengan Nomor Tilang 12457854465454
-                                        sudah terdaftar. Mohon tunggu informasi berikutnya.
+                                        Pengajuan dokumen tilang Anda sudah terdaftar
+                                        Mohon tunggu informasi berikutnya melalui email Anda
                                     </div>
                                 </div>
                                 <div class="row d-flex justify-content-between">
