@@ -43,39 +43,40 @@
 
                     <!-- start page title -->
                     <div class="row mt-3 mt-md-4">
-                        <div class="col-12">
-                            <!-- Portlet card -->
-                            <div class="col-12 col-md-12">
-                                <div class="card-title">
-                                    <h2 class="font-weight-bold">Riwayat Pengajuan</h2>
-                                    <p class="font-weight-light">Berikut adalah detail penajuan dokumen</p>
-                                </div>
-                                <div class="table-responsive ">
-                                    <table class="table text-nowrap table-light text-dark">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nomor dokumen</th>
-                                                <th>Instansi</th>
-                                                <th>Status</th>
-                                                <th>Opsi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>141232101</td>
-                                                <td>Dinas Kejaksaan Negri Yogyakarta</td>
-                                                <td><span class="badge badge-success">Dokumen Tersedia</span></td>
-                                                <td>
-                                                    <a name="" id="" class="btn btn-primary" href="<?= site_url('pg/proses') ?>" role="button">Proses</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                        <!-- Portlet card -->
+                        <div class="col-12 col-md-6">
+                            <div class="card-title">
+                                <h2 class="font-weight-bold">Riwayat Pengajuan</h2>
+                                <p class="font-weight-light">Berikut adalah detail penajuan dokumen</p>
+                            </div>
+                            <div class="card">
+                                <div class=" card-body">
+
+
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless text-dark">
+                                            <tbody>
+                                                <tr>
+                                                    <td><b>Nomor Tilang</b></td>
+                                                    <td>141232101</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Instansi</b></td>
+                                                    <td>Dinas Kejaksaan Negri Yogyakarta</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><b>Status</b></td>
+                                                    <td><span class="badge badge-success">Dokumen Tersedia</span></td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div> <!-- end col-->
+                            <a name="" id="" class="btn d-block d-md-inline btn-lg btn-blue" href="<?= site_url('pg/proses') ?>" role="button">Proses</a>
+                        </div>
                     </div>
                     <!-- end row -->
 
