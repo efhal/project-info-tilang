@@ -94,7 +94,8 @@
                                 </table>
                             </div>
                             <div class="alert alert-success" role="alert">
-                                <p class="card-text">Pemabayaran anda telah diterima. silahkan menunggu di rumah dokumen anda akan sampai beberapa saat lagi</p>
+                                <p class="card-text">Pembayaran anda telah diterima. Kami akan proses.
+                                    Silahkan tunggu di rumah saja</p>
                             </div>
 
                             <a name="" id="" class="btn btn-lg d-block d-md-inline btn-blue" href="<?= site_url('pg') ?>" role="button">Ke Beranda</a>
