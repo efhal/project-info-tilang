@@ -81,7 +81,7 @@
                     <li class="mb-2">
                         <a href="<?= site_url($data_session->akronim . '/') ?>">
                             <i class="mdi mdi-cellphone-link text-dark mdi-24px"></i>
-                            <span class="text-dark"> Cari </span>
+                            <span class="text-dark"> Pengajuan </span>
                         </a>
                     </li>
 

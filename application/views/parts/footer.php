@@ -1,5 +1,5 @@
           <footer class="footer bg-white">
-              <div class="">
+              <div class="container-fluid">
                   <div class="row">
                       <div class="col-md-6">
                           2020 - <script>

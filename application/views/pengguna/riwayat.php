@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
-    <title><?= $title ?></title>
+    <title><?= $title ?> | <?= NAMA_APLIKASI ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link href="<?= site_url() ?>assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="<?= site_url() ?>assets/images/favicon.ico">
+    <link href="<?= site_url() ?>assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
     <?php $this->load->view('parts/style') ?>
+
+    <!-- Datatable css -->
     <link href="<?= site_url() ?>assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= site_url() ?>assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <!-- Datatable css -->
@@ -19,15 +21,16 @@
             margin-top: 20px;
         }
     </style>
+
 </head>
 
-<body data-sidebar-icon="twotones">
+<body data-sidebar-icon="twotones" class="bg-white">
 
     <!-- Begin page -->
     <div id="wrapper">
 
         <!-- Topbar Start -->
-        <?php $this->load->view('parts/top_bar_keuangan') ?>
+        <?php $this->load->view('parts/top_bar') ?>
         <!-- Topbar End-->
 
 
@@ -46,53 +49,44 @@
                 <div class="container-fluid">
 
                     <!-- start page title -->
-                    <div class="row">
+                    <div class="row mt-3 mt-md-4">
                         <div class="col-12">
                             <!-- Portlet card -->
-                            <div class="card mt-3">
-                                <div class="card-body">
-                                    <div class="card-body">
+                            <div class="col-12 col-md-12">
+                                <div class="card-title">
+                                    <h2 class="font-weight-bold">Riwayat Pengajuan</h2>
+                                    <p class="font-weight-light">Lengkapi data berikut untuk melakukan permohonan dokumen</p>
+                                </div>
 
-                                        <div id="form-searach" method="POST">
-                                            <div class="form-row">
-                                                <div class="form-group col-12 col-lg-2 col-xl-2">
-                                                    <input type="text" class="form-control" id="cari_dokumen" placeholder="Cari">
-                                                </div>
-                                                <div class="form-group col-12 col-lg-4 col-xl-4">
-                                                    <select id="instansi"></select>
-                                                </div>
-                                                <div class="form-group col-12 col-lg-4 col-xl-4">
-                                                    <select id="layanan"></select>
-                                                </div>
-
-                                                <div class="form-group col-12 col-lg-2 col-xl-1">
-                                                    <button id="cta-search" class="btn btn-primary btn-block d-md-inline">Cari</button>
-                                                </div>
-                                            </div>
+                                <div id="form-searach" method="POST">
+                                    <div class="form-row">
+                                        <div class="form-group col-12 col-lg-2 col-xl-2">
+                                            <input type="text" class="form-control" id="cari_dokumen" placeholder="Cari">
                                         </div>
-                                        <div class=" m-sm-0 mt-md-2">
-                                            <table class="table dt-responsive nowrap w-100 text-dark" id="datatable">
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>No</th>
-                                                        <th>No Dok/<br />Tgl</th>
-                                                        <th>Instansi/<br />Layanan</th>
-                                                        <th>Biaya Dokumen</th>
-                                                        <th>Fee Admin</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
+                                        <div class="form-group col-12 col-lg-2 col-xl-1">
+                                            <button id="cta-search" class="btn btn-primary btn-block d-md-inline">Cari</button>
                                         </div>
                                     </div>
-                                    <!-- end card-body-->
+                                </div>
+                                <div class=" m-sm-0 mt-md-2">
+                                    <table class="table dt-responsive nowrap w-100 text-dark" id="datatable">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>No</th>
+                                                <th>No Dok/<br />Tgl</th>
+                                                <th>Instansi/<br />Layanan</th>
+                                                <th>Biaya Dokumen</th>
+                                                <th>Fee Admin</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                </div> <!-- end card-body-->
-                            </div> <!-- end card-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div> <!-- end col-->
                     </div>
                     <!-- end row -->
@@ -121,6 +115,9 @@
     <script src="<?= base_url('assets/') ?>libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url('assets/') ?>libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="<?= base_url('assets/') ?>libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <script src="<?= base_url('assets/') ?>libs/select2/js/select2.min.js"></script>
+    <script src="<?= base_url('node_modules/') ?>iziToast/dist/js/izitoast.min.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $("#instansi").select2({

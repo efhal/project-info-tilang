@@ -165,6 +165,42 @@ class Pengguna extends CI_Controller
 
         $this->load->view('pengguna/proses', $params);
     }
+    public function view_status_pengajuan()
+    {
+        $params = [
+            'title' => 'Info Dokumen',
+            'page_title' => 'Info Dokumen',
+            'data_session' => $this->data_session
+        ];
+        $this->load->view('pengguna/status_pengajuan', $params);
+    }
+    public function view_detail_pengajuan()
+    {
+        $params = [
+            'title' => 'Info Dokumen',
+            'page_title' => 'Info Dokumen',
+            'data_session' => $this->data_session
+        ];
+        $this->load->view('pengguna/detail_pengajuan', $params);
+    }
+    public function view_pembayaran_diterima()
+    {
+        $params = [
+            'title' => 'Info Dokumen',
+            'page_title' => 'Info Dokumen',
+            'data_session' => $this->data_session
+        ];
+        $this->load->view('pengguna/pembayaran_diterima', $params);
+    }
+    public function view_riwayat_pengajuan()
+    {
+        $params = [
+            'title' => 'Info Dokumen',
+            'page_title' => 'Info Dokumen',
+            'data_session' => $this->data_session
+        ];
+        $this->load->view('pengguna/riwayat_pengajuan', $params);
+    }
     public function view_pengaturan()
     {
         $params = [
