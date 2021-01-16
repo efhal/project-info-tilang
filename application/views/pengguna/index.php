@@ -48,7 +48,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="card-title">
                                     <h2 class="font-weight-bold">Formulir Pengajuan</h2>
-                                    <p class="font-weight-light">Lengkapi data berikut untuk melakukan permohonan dokumen</p>
+                                    <p class="font-weight-light">Lengkapi data berikut untuk pengajuan dokumen
+                                        tilang Anda</p>
                                 </div>
                                 <form class="mt-3">
                                     <div class="form-row mb-3">
@@ -60,7 +61,7 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="col-12 col-md-12 mb-3">
-                                            <label for="exampleInputPassword1" class="text-dark">Nomor Dokumen</label>
+                                            <label for="exampleInputPassword1" class="text-dark">Nomor Tilang</label>
                                             <input type="number" class="form-control form-control" placeholder="Nomor Dokumen">
                                         </div>
                                     </div>
@@ -81,9 +82,18 @@
                                             <span class="badge badge-warning mt-3" id="badge-status"></span>
                                         </div>
                                     </div>
+                                    <div class="form-row">
+                                        <div class="col-12 col-md-12 mb-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                                <label class="custom-control-label" for="customCheck">dengan ini menyetujui syarat & ketentuan dalam
+                                                    proses pengajuan tilang melalui layanan eTilang.id</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-row mt-4 mt-md-3">
                                         <div class="col-12 col-md-6 col-lg-3">
-                                            <button type="button" id="btn-kirim-ajuan" class="btn btn-lg btn-blue btn-block">Kirim ajuan</button>
+                                            <button type="button" id="btn-kirim-ajuan" class="btn btn-lg btn-blue btn-block">Kirim</button>
                                         </div>
                                     </div>
                                     <div class="alert alert-success mt-3 d-none" id="status-kirim-ajuan" role="alert">

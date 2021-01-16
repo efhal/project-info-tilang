@@ -50,7 +50,7 @@
                                         </span>
                                     </a>
                                 </div>
-                                <p class=" mb-4 mt-3">Masukan email dan password untuk mengakses User Panel.
+                                <p class=" mb-4 mt-3">Masukan email dan password untuk mengakses eTilang.id
                                 </p>
                                 <!-- end card-body -->
                             </div>
