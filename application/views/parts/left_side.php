@@ -78,32 +78,32 @@
                 <?php } ?>
                 <?php if ($data_session->akronim == 'pg') { ?>
 
-                    <li>
+                    <li class="mb-2">
                         <a href="<?= site_url($data_session->akronim . '/') ?>">
-                            <i class="mdi mdi-cellphone-link"></i>
-                            <span> Cari </span>
+                            <i class="mdi mdi-cellphone-link text-dark mdi-24px"></i>
+                            <span class="text-dark"> Pengajuan </span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="mb-2">
                         <a href="<?= site_url($data_session->akronim . '/riwayat') ?>">
-                            <i class="mdi mdi-clipboard-multiple-outline"></i>
-                            <span> Riwayat </span>
+                            <i class="mdi mdi-clipboard-multiple-outline text-dark mdi-24px"></i>
+                            <span class="text-dark"> Riwayat </span>
                         </a>
                     </li>
 
 
-                    <li>
+                    <li class="mb-2">
                         <a href="<?= site_url($data_session->akronim . '/pengaturan') ?>">
-                            <i class="mdi mdi-account-settings-outline mdi-24px"></i>
-                            <span> Pengaturan </span>
+                            <i class="mdi mdi-account-settings-outline text-dark mdi-24px "></i>
+                            <span class="text-dark"> Pengaturan </span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="mb-2">
                         <a href="<?= site_url('logout') ?>">
-                            <i class="mdi mdi-power mdi-24px"></i>
-                            <span> Logout </span>
+                            <i class="mdi mdi-logout text-dark mdi-24px k"></i>
+                            <span class="text-dark"> Logout </span>
                         </a>
                     </li>
                 <?php } ?>

@@ -1,5 +1,5 @@
  <!-- Topbar Start -->
- <div class="navbar-custom">
+ <div class="navbar-custom bg-white">
      <div class="container-fluid">
          <ul class="list-unstyled topnav-menu float-right mb-0">
 
@@ -173,7 +173,7 @@
              </li>
 
              <li class="dropdown notification-list topbar-dropdown">
-                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                 <a class="nav-link dropdown-toggle waves-effect waves-light text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                      <i class="fe-bell noti-icon"></i>
                      <span class="badge badge-danger rounded-circle noti-icon-badge d-none">9</span>
                  </a>
@@ -217,8 +217,8 @@
              </li>
 
              <li class="dropdown notification-list topbar-dropdown">
-                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                     <span class="pro-user-name ml-1">
+                 <a class="nav-link dropdown-toggle mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                     <span class="pro-user-name ml-1 text-dark">
                          <?= $data_session->nama_lengkap ?> <i class="mdi mdi-chevron-down"></i>
                      </span>
                  </a>
@@ -246,8 +246,8 @@
              </li>
 
              <li class="dropdown notification-list">
-                 <a href="<?= site_url('logout') ?>" class="nav-link right-bar-toggle waves-effect waves-light">
-                     <i class="mdi mdi-power mdi-24px"></i>
+                 <a href="<?= site_url('logout') ?>" class="nav-link right-bar-toggle waves-effect waves-light text-dark">
+                     <i class="mdi mdi-logout mdi-24px"></i>
                  </a>
              </li>
 
@@ -278,7 +278,7 @@
 
          <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
              <li>
-                 <button class="button-menu-mobile waves-effect waves-light">
+                 <button class="button-menu-mobile waves-effect waves-light text-dark">
                      <i class="fe-menu"></i>
                  </button>
              </li>

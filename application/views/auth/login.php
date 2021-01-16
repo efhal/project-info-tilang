@@ -40,13 +40,13 @@
                                 <div class="auth-logo">
                                     <a href="<?= site_url() ?>" class="logo logo-dark text-center">
                                         <span class="logo-lg">
-                                            <img src="<?= base_url() ?>assets/images/logo-dark.png" alt="" height="22">
+                                            <img src="<?= base_url() ?>assets/images/logo-dark.png" alt="" height="50">
                                         </span>
                                     </a>
 
                                     <a href="<?= site_url() ?>" class="logo logo-light text-center">
                                         <span class="logo-lg">
-                                            <img src="<?= base_url() ?>assets/images/logo-light.png" alt="" height="22">
+                                            <img src="<?= base_url() ?>assets/images/logo-light.png" alt="" height="50">
                                         </span>
                                     </a>
                                 </div>
@@ -74,7 +74,7 @@
                                 </div>
 
                                 <div class="form-group mb-1 text-center">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit-singup">
+                                    <button class="btn btn-blue btn-lg btn-block" type="submit" id="submit-singup">
                                         <i id="spin-login" class="fas fa-circle-notch fa-spin d-none"></i>
                                         Login </button>
                                 </div>

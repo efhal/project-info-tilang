@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/efhal/project-info-dokumen#readme",
   "dependencies": {
+    "izitoast": "^1.4.0",
     "sweetalert2": "^10.12.6"
   }
 }

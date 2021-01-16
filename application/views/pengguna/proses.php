@@ -1,7 +1,3 @@
-<?php
-
-use Carbon\Carbon;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +9,12 @@ use Carbon\Carbon;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="<?= site_url() ?>assets/images/favicon.ico">
+    <link href="<?= site_url() ?>assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
     <!-- Plugins css -->
     <link href="<?= base_url() ?>assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url() ?>assets/libs/dropify/css/dropify.min.css" rel="stylesheet" type="text/css" />
     <?php $this->load->view('parts/style') ?>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <!-- Datatable css -->
     <style type="text/css">
         /* Always set the map height explicitly to define the size of the div
@@ -41,10 +39,9 @@ use Carbon\Carbon;
             background: #ebebeb;
         }
     </style>
-
 </head>
 
-<body data-sidebar-icon="twotones">
+<body data-sidebar-icon="twotones" class="bg-white">
 
     <!-- Begin page -->
     <div id="wrapper">
@@ -69,158 +66,73 @@ use Carbon\Carbon;
                 <div class="container-fluid">
 
                     <!-- start page title -->
-                    <div class="row mt-3 mt-md-2">
-                        <div class="col-12 col-md-12">
-                        </div>
-                        <div class="col-12 col-md-7">
-                            <div class="row mt-3 mt-md-3">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
-                                        <div class="card-body">
-                                            <div class="form-group">
-                                                <div id="map" style="height: 40vh" class="mt-1"></div>
+                    <div class="row mt-3 mt-md-4">
+                        <div class="col-12">
+                            <!-- Portlet card -->
+                            <div class="col-12 col-md-6">
+                                <div class="card-title">
+                                    <h2 class="font-weight-bold">Formulir Permohonan</h2>
+                                    <p class="font-weight-light">Lengkapi data berikut untuk melakukan permohonan dokumen</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-meta-description"><span class="h5 font-weight-bold">Alamat</span></label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-light" type="button" id="exampleAddon"><i class="mdi mdi-target"></i></button>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Cari lokasi..." id="cari-lokasi" aria-label="Example placeholder" aria-describedby="exampleAddon">
+                                    </div>
+                                    <div id="map" style="height: 40vh" class="mt-1"></div>
+                                </div>
+                                <form id="form-proses">
+                                    <input type="hidden" name="latlng" id="latlng">
+                                    <input type="hidden" name="alamat" id="alamat">
+                                    <input type="hidden" name="id_dokumen" id="id_dokumen" value="<?= $this->input->get('i', true) ?>">
+                                    <hr />
+                                    <div class="form-group mt-2">
+                                        <label for="product-meta-description"><span class="h5 font-weight-bold">Metode Pengiriman</span></label>
+                                        <small class="d-block"><i>Pilih salah satu metode pengiriman dokumen dibawah ini</i></small>
+                                        <br />
+                                        <div class="col-sm-6">
+                                            <div class="radio mb-2">
+                                                <input type="radio" name="metode_pengiriman" id="gs" value="1"> <label for="gs"> Go Send </label>
                                             </div>
-                                            <!-- Formulir Proses Dokumen -->
-                                            <form id="form-proses">
-                                                <input type="hidden" name="id_dokumen" id="id_dokumen" value="<?= $this->input->get('i', true) ?>">
-                                                <input type="hidden" name="latlng" id="latlng">
-                                                <div class="form-group">
-                                                    <label for="product-meta-description"><span class="h5 font-weight-bold">Alamat Penerima</span></label>
-                                                    <small class="d-block"><i>Silahkan pin lokasi pada map yang tersedia</i></small>
-                                                    <br />
-                                                    <textarea class="form-control" id="alamat" name="alamat" rows="1"></textarea>
-                                                </div>
-                                                <hr />
-                                                <div class="form-group">
-                                                    <label for="product-meta-description"><span class="h5 font-weight-bold">Upload bukti pengurusan</span></label>
-                                                    <small class="d-block"><i>Silahkan upload bukti pengurusan file pada area dibawah ini</i></small>
-                                                    <br />
-                                                    <div class="row">
-                                                        <div class="col-12 col-md-4">
-                                                            <input type="file" id="bukti-pengurusan" data-allowed-file-extensions="jpg jpeg png" data-default-file="<?= base_url('upload/' . $bukti_pengurusan) ?>" data-plugins="dropify" data-max-file-size="1M" />
-                                                        </div>
-                                                    </div>
-                                                    <span class="badge badge-warning mt-3" id="badge-status"></span>
-                                                </div>
-                                                <hr />
-                                                <div class="form-group mt-2">
-                                                    <label for="product-meta-description"><span class="h5 font-weight-bold">Metode Pengiriman</span></label>
-                                                    <small class="d-block"><i>Pilih salah satu metode pengiriman dokumen dibawah ini</i></small>
-                                                    <br />
-                                                    <div class="col-sm-6">
-                                                        <div class="radio mb-2">
-                                                            <input type="radio" name="metode_pengiriman" id="gs" value="1"> <label for="gs"> Go Send </label>
-                                                        </div>
-                                                        <div class="radio mb-2">
-                                                            <input type="radio" name="metode_pengiriman" id="pr" value="2"> <label for="pr"> Parcel </label>
-                                                        </div>
-                                                        <div class="radio mb-2">
-                                                            <input type="radio" name="metode_pengiriman" id="wh" value="3"> <label for="wh"> Wahana </label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="mp">
+                                            <div class="radio mb-2">
+                                                <input type="radio" name="metode_pengiriman" id="pr" value="2"> <label for="pr"> J&T </label>
+                                            </div>
+                                        </div>
+                                        <div id="mp">
 
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <div class="form-group mt-4">
-                                                    <label for="product-meta-description"><span class="h5 font-weight-bold">Metode Pembayaran</span></label>
-                                                    <small class="d-block"><i>Pilih salah satu metode pembayaran dokumen dibawah ini</i></small>
-                                                    <br />
-                                                    <div class="col-sm-6">
-                                                        <div class="radio mb-2">
-                                                            <input type="radio" name="metode_pembayaran" id="tb" value="1"> <label for="tb"> Transfer Bank </label>
-                                                        </div>
-                                                        <div class="radio mb-2">
-                                                            <input type="radio" name="metode_pembayaran" id="va" value="2"> <label for="va"> Virtual Account </label>
-                                                        </div>
-                                                    </div>
-                                                    <hr />
-                                                    <div id="status_form"></div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 col-md-3 order-1 order-md-0">
-                                                        <a href="<?= site_url('pg/') ?>" class="btn btn-lg btn-block btn-danger mb-md-0">Batal</a>
-                                                    </div>
-                                                    <div class="col-12 col-md-3">
-                                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-1 ">Proses</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <!-- /Formulir Proses Dokumen -->
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 mt-md-3">
-                            <div class="card d-none">
-                                <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
-                                <div class="card-body">
-                                    <h5 class="card-title">Detail Dokumen</h5>
-                                    <small class="d-block mb-2"><i>Berikut adalah detail dokumen pengurusan dokumen</i></small>
                                     <hr />
-                                    <small><b>No Dokumen</b></small>
-                                    <span class="d-block font-weight-bold h5 ml-2"><?= $data_dokumen->nomor_dokumen ?></span>
-                                    <small><b>Instansi</b></small>
-                                    <span class="d-block font-weight-bold h5 ml-2"><?= $data_dokumen->nama_instansi ?></span>
-                                    <small><b>Layanan</b></small>
-                                    <span class="d-block font-weight-bold h5 ml-2"><?= $data_dokumen->nama_layanan ?></span>
-                                    <small><b>Pemilik</b></small>
-                                    <span class="d-block font-weight-bold h5 ml-2"><?= $data_dokumen->pemilik_dokumen ?></span>
-                                    <small><b>Tanggal</b></small>
-                                    <span class="d-block font-weight-bold h5 ml-2"><?= Carbon::parse($data_dokumen->tanggal_dokumen)->locale('id')->isoFormat('LL'); ?></span>
-                                </div>
-                            </div>
-                            <div class="card bg-primary text-white">
-                                <!--tips: add .text-center,.text-right to the .card to change card text alignment-->
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Bantuan</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum cum, nisi non reprehenderit soluta delectus tenetur animi sit dolores accusantium a inventore explicabo sapiente ducimus libero quod doloremque aperiam?</p>
-                                    <a class="btn btn-lg btn-block btn-success" target="__BLANK__" href="https://api.whatsapp.com/send?phone=6282313045392&text=Selamat%20Siang%2C%20saya%20kesulitan%20...%20%2C%20gimana%20solusinya%20%3F">Bantuan <i class="mdi mdi-whatsapp"></i></a>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <small class="d-block"><i>Berikut adalah ringkasan biaya pengiriman dokumen</i></small>
-                                    <br />
-                                    <div class="table-responsive table-sm">
-                                        <table class="table table-centered table-nowrap mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td>Biaya <b><?= $data_dokumen->nama_layanan ?></b>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        Rp <?= number_format($data_dokumen->biaya_layanan, 2, '.', '.') ?> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Biaya <b>Pengiriman <span id="metode-kirim"></span></b>
-                                                    </td>
-                                                    <td class="text-right"><span id="biaya-kirim">-</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Biaya <b>Admin</b>
-                                                    </td>
-                                                    <td class="text-right">
-                                                        Rp <?= number_format($data_dokumen->biaya_admin, 2, '.', '.') ?> </td>
-                                                </tr>
-                                                <tr class="text-right">
-                                                    <td>
-                                                        <h5 class="m-0">Total:</h5>
-                                                    </td>
-                                                    <td class="text-right font-weight-semibold">Rp <span class="h2" id="biaya-total">56.000,00</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="form-group mt-4">
+                                        <label for="product-meta-description"><span class="h5 font-weight-bold">Metode Pembayaran</span></label>
+                                        <small class="d-block"><i>Pilih salah satu metode pembayaran dokumen dibawah ini</i></small>
+                                        <br />
+                                        <div class="col-sm-6">
+                                            <div class="radio mb-2">
+                                                <input type="radio" name="metode_pembayaran" id="tb" value="1"> <label for="tb"> Transfer Bank </label>
+                                            </div>
+                                            <div class="radio mb-2">
+                                                <input type="radio" name="metode_pembayaran" id="va" value="2"> <label for="va"> Virtual Account </label>
+                                            </div>
+                                        </div>
+                                        <hr />
                                     </div>
-                                </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-3 order-1 order-md-0">
+                                            <a href="<?= site_url('pg/') ?>" class="btn btn-lg btn-block btn-danger mb-md-0">Batal</a>
+                                        </div>
+                                        <div class="col-12 col-md-3">
+                                            <button id="btn-submit" class="btn btn-lg btn-primary btn-block mb-1 ">Proses</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-
-                        </div>
-                    </div> <!-- end row -->
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row -->
 
                 </div> <!-- container -->
 
@@ -239,7 +151,11 @@ use Carbon\Carbon;
 
     </div>
     <!-- END wrapper -->
+
     <?php $this->load->view('parts/script') ?>
+    <script src="<?= base_url('assets/') ?>libs/select2/js/select2.min.js"></script>
+    <script src="<?= base_url('node_modules/') ?>iziToast/dist/js/izitoast.min.js" type="text/javascript"></script>
+
     <script src="<?= base_url() ?>/assets/libs/dropify/js/dropify.min.js"></script>
 
     <script type="text/javascript">
@@ -255,7 +171,7 @@ use Carbon\Carbon;
 
             function upload_file(fd, prefix) {
                 $.ajax({
-                    url: '<?= site_url('pg/p/up/bukti_dokumen?i=' . $data_dokumen->id_dokumen . '&nm=' . $data_dokumen->nomor_dokumen . '&pre=') ?>' + prefix,
+                    // url: 'site_url('pg / p / up / bukti_dokumen ? i = ' . $data_dokumen->id_dokumen . ' & nm = ' . $data_dokumen->nomor_dokumen . ' & pre = ')' + prefix,
                     type: 'post',
                     data: fd,
                     contentType: false,
@@ -305,99 +221,80 @@ use Carbon\Carbon;
                 clear_file(prefix)
             });
 
-            $("input[name='metode_pengiriman']").on('change', function() {
-                let metode_pengiriman_id = $(this).val();
-                $.post("<?= site_url('pg/p/g/metode_pengiriman') ?>", {
-                        'metode_pengiriman_id': metode_pengiriman_id
-                    },
-                    function(data, textStatus, jqXHR) {
-                        $("#mp").html(data.html);
-                        $("#biaya-kirim").text("Rp " + data.biaya);
-                    }, "json"
-                );
-            })
-
             $("#form-proses").on('submit', function(e) {
                 e.preventDefault();
-                data_dokumen = $(this).serialize();
-                $.post("<?= site_url('pg/p/i/proses_dokumen') ?>", data_dokumen,
-                    function(data, textStatus, jqXHR) {
-                        $("#status_form").html(data.html)
-                    }, "json"
-                );
+                window.location.href = "<?= site_url('pg/detail_pengajuan') ?>"
             })
-
-
-
-
         })
     </script>
     <script type="text/javascript">
-        let map, infoWindow;
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById("map"), {
+        function initAutocomplete() {
+            const map = new google.maps.Map(document.getElementById("map"), {
                 center: {
                     lat: -6.200000,
                     lng: 106.816666
                 },
-                zoom: 6,
+                zoom: 5,
+                mapTypeId: "roadmap",
             });
-            const geocoder = new google.maps.Geocoder();
-            infoWindow = new google.maps.InfoWindow();
-            const locationButton = document.createElement("button");
-            locationButton.textContent = "Dapatkan lokasi anda";
-            locationButton.classList.add("custom-map-control-button");
-            map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-            locationButton.addEventListener("click", () => {
+            // Create the search box and link it to the UI element.
+            const input = document.getElementById("cari-lokasi");
+            const searchBox = new google.maps.places.SearchBox(input);
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener("bounds_changed", () => {
+                searchBox.setBounds(map.getBounds());
+            });
+            let markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener("places_changed", () => {
+                const places = searchBox.getPlaces();
 
-                // Try HTML5 geolocation.
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(
-                        (position) => {
-                            const pos = {
-                                lat: position.coords.latitude,
-                                lng: position.coords.longitude,
-                            };
-                            geocoder.geocode({
-                                location: pos
-                            }, (results, status) => {
-                                if (status === "OK") {
-                                    if (results[0]) {
-                                        map.setZoom(11);
-                                        const marker = new google.maps.Marker({
-                                            position: pos,
-                                            map: map,
-                                        });
-                                        $("#latlng").val(pos.lat + ',' + pos.lng);
-                                        $("#alamat").text(results[0].formatted_address);
-                                        //        		        infowindow.setContent(results[0].formatted_address);
-                                        //        		        infowindow.open(map, marker);
-                                    } else {
-                                        window.alert("No results found");
-                                    }
-                                } else {
-                                    window.alert("Geocoder failed due to: " + status);
-                                }
-                            });
-
-
-                            infoWindow.setPosition(pos);
-                            infoWindow.setContent("Lokasi anda.");
-                            infoWindow.open(map);
-                            map.setZoom(10);
-                            map.setCenter(pos);
-                        },
-                        () => {
-                            handleLocationError(true, infoWindow, map.getCenter());
-                        }
-                    );
-                } else {
-                    // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
+                if (places.length == 0) {
+                    return;
                 }
+                // Clear out the old markers.
+                markers.forEach((marker) => {
+                    marker.setMap(null);
+                });
+                markers = [];
+                // For each place, get the icon, name and location.
+                const bounds = new google.maps.LatLngBounds();
+                places.forEach((place) => {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    const icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25),
+                    };
+                    // Create a marker for each place.
+                    markers.push(
+                        new google.maps.Marker({
+                            map,
+                            icon,
+                            title: place.name,
+                            position: place.geometry.location,
+                        })
+                    );
+                    $("#alamat").val($("#cari-lokasi").val());
+                    $("#latlng").val(place.geometry.location.toString());
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
             });
         }
+
 
         function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             infoWindow.setPosition(pos);
@@ -409,7 +306,7 @@ use Carbon\Carbon;
             infoWindow.open(map);
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo9HRRCCPaSc56lFFDzT2V0xOYPI8OA9U&callback=initMap&libraries=&v=weekly" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo9HRRCCPaSc56lFFDzT2V0xOYPI8OA9U&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
 
 </body>
 
