@@ -257,7 +257,7 @@
          <div class="logo-box">
              <a href="<?= site_url($data_session->akronim . '/ph') ?>" class="logo logo-dark text-center">
                  <span class="logo-sm">
-                     <img src="<?= site_url() ?>assets/images/logo-sm.png" alt="" height="42">
+                     <img src="<?= site_url() ?>assets/images/logo-sm.png" alt="" height="20">
                      <!-- <span class="logo-lg-text-light">UBold</span> -->
                  </span>
                  <span class="logo-lg">
@@ -268,10 +268,10 @@
 
              <a href="<?= site_url($data_session->akronim . '/ph') ?>" class="logo logo-light text-center">
                  <span class="logo-sm">
-                     <img src="<?= site_url() ?>assets/images/logo-sm.png" alt="" height="32">
+                     <img src="<?= site_url() ?>assets/images/logo-sm.png" alt="" height="35">
                  </span>
                  <span class="logo-lg">
-                     <img src="<?= site_url() ?>assets/images/logo-light.png" alt="" height="20">
+                     <img src="<?= site_url() ?>assets/images/logo-light.png" alt="" height="35">
                  </span>
              </a>
          </div>
