@@ -72,7 +72,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="card-title">
                                     <h2 class="font-weight-bold">Formulir Permohonan</h2>
-                                    <p class="font-weight-light">Lengkapi data berikut untuk melakukan permohonan dokumen</p>
+                                    <p class="font-weight-light">Lengkapi data berikut untuk melakukan proses
+                                        pembayaran dan pengiriman dokumen tilang</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="product-meta-description"><span class="h5 font-weight-bold">Alamat</span></label>
@@ -125,7 +126,7 @@
                                             <a href="<?= site_url('pg/') ?>" class="btn btn-lg btn-block btn-danger mb-md-0">Batal</a>
                                         </div>
                                         <div class="col-12 col-md-3">
-                                            <button id="btn-submit" class="btn btn-lg btn-primary btn-block mb-1 ">Proses</button>
+                                            <button id="btn-submit" class="btn btn-lg btn-primary btn-block mb-1 ">Kirim</button>
                                         </div>
                                     </div>
                                 </form>

@@ -46,58 +46,59 @@
                     <div class="row mt-3 mt-md-4">
                         <div class="col-12">
                             <!-- Portlet card -->
-                            <div class="col-12 col-md-12">
+                            <div class="col-12 col-md-6">
                                 <div class="card-title">
                                     <h2 class="font-weight-bold">Detail Pengajuan</h2>
-                                    <p class="font-weight-light">Berikut adalah detail penajuan dokumen</p>
+                                    <p class="font-weight-light">Detail penajuan dokumen</p>
                                 </div>
-                                <div class="table-responsive ">
-                                    <table class="table text-nowrap table-light text-dark">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>#Nomor dokumen</th>
-                                                <th>Instansi</th>
-                                                <th>Metode Pengiriman</th>
-                                                <th>Metode Pembayaran</th>
-                                            </tr>
-                                        </thead>
+                                <div class="table-responsive">
+                                    <table class="table table-light text-dark">
                                         <tbody>
                                             <tr>
+                                                <td><b>Nomor Dokumen</b></td>
                                                 <td>141232101</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Instansi</b></td>
                                                 <td>Dinas Kejaksaan Negri Yogyakarta</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Metode Pengiriman</b></td>
                                                 <td>Go-Jek</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Metode Pembayaran</b></td>
                                                 <td>Transfer Bank (BRI)</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <div class="col-12 col-md-12">
-                                <div class="card-title">
-                                    <p class="font-weight-light">Berikut adalah rincian biaya dokumen</p>
-                                </div>
-                                <div class="table-responsive ">
-                                    <table class="table text-nowrap table-light text-dark">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>Biaya dokumen</th>
-                                                <th>Biaya admin</th>
-                                                <th>Biaya logistik (pengiriman)</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
+                                <p class="font-weight-light">Detail biaya dokumen</p>
+                                <div class="table-responsive">
+                                    <table class="table table-light text-dark">
                                         <tbody>
                                             <tr>
+                                                <td><b>Biaya dokumen</b></td>
                                                 <td>Rp 15.0000</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Biaya admin</b></td>
                                                 <td>Rp 10.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Biaya logistik (pengiriman)</b></td>
                                                 <td>Rp 23.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Total</b></td>
                                                 <td>Rp 58.0000</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+
                             </div>
-                            <div class="col-12 col-md-12 mt-3">
+                            <div class="col-12 col-md-6 mt-3">
                                 <div class="alert alert-success" role="alert">
                                     <p class="card-text">Silahkan transfer uang sebesar Rp 58.000,00 ke rekening <br /><span class="font-weight-bold">Bank BRI <input type="text" id="myInput" class="form-control col-3 d-inline border-0" value="024501002290304"> <button class="btn btn-light" id="button-copy"><i class="mdi mdi-content-copy"></i></button>
                                             <br />a.n. PT. MELAYANI CAKRAWALA N

@@ -60,7 +60,7 @@
                                         <a name="" id="" class="btn btn-lg btn-block btn-blue" href="<?= site_url('pg') ?>" role="button">Ke Beranda</a>
                                     </div>
                                     <div class="col-6 col-md-3 col-lg-3 col-xl-2">
-                                        <a name="" id="" class="btn btn-lg btn-block btn-blue" href="<?= site_url('pg/riwayat_pengajuan') ?>" role="button">Riwayat</a>
+                                        <a name="" id="" class="btn btn-lg btn-block btn-blue" href="<?= site_url('pg/riwayat_pengajuan') ?>" role="button">Detail</a>
                                     </div>
                                 </div>
                             </div>

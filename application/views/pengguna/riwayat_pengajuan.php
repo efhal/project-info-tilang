@@ -46,7 +46,7 @@
                         <!-- Portlet card -->
                         <div class="col-12 col-md-6">
                             <div class="card-title">
-                                <h2 class="font-weight-bold">Riwayat Pengajuan</h2>
+                                <h2 class="font-weight-bold">Detail Pengajuan</h2>
                                 <p class="font-weight-light">Berikut adalah detail penajuan dokumen</p>
                             </div>
                             <div class="card">

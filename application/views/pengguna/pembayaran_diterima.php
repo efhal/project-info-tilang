@@ -43,72 +43,62 @@
 
                     <!-- start page title -->
                     <div class="row mt-3 mt-md-4">
-                        <div class="col-12">
-                            <!-- Portlet card -->
-                            <div class="col-12 col-md-12">
-                                <div class="card-title">
-                                    <h2 class="font-weight-bold">Status Pembayaran</h2>
-                                    <p class="font-weight-light">Berikut adalah detail penajuan dokumen</p>
-                                </div>
-                                <div class="table-responsive ">
-                                    <table class="table text-nowrap table-light text-dark">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>#Nomor dokumen</th>
-                                                <th>Instansi</th>
-                                                <th>Metode Pengiriman</th>
-                                                <th>Metode Pembayaran</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>141232101</td>
-                                                <td>Dinas Kejaksaan Negri Yogyakarta</td>
-                                                <td>Go-Jek</td>
-                                                <td>Transfer Bank (BRI)</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <div class="card-title">
+                                <h2 class="font-weight-bold">Status Pembayaran</h2>
+                                <p class="font-weight-light">Detail penajuan dokumen</p>
                             </div>
-                            <div class="col-12 col-md-12">
-                                <div class="card-title">
-                                    <p class="font-weight-light">Berikut adalah rincian biaya dokumen</p>
-                                </div>
-                                <div class="table-responsive ">
-                                    <table class="table text-nowrap table-light text-dark">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th>Biaya dokumen</th>
-                                                <th>Biaya admin</th>
-                                                <th>Biaya logistik (pengiriman)</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Rp 15.0000</td>
-                                                <td>Rp 10.000</td>
-                                                <td>Rp 23.000</td>
-                                                <td>Rp 58.0000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-light text-dark">
+                                    <tbody>
+                                        <tr>
+                                            <td><b>Nomor Dokumen</b></td>
+                                            <td>141232101</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Instansi</b></td>
+                                            <td>Dinas Kejaksaan Negri Yogyakarta</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Metode Pengiriman</b></td>
+                                            <td>Go-Jek</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Metode Pembayaran</b></td>
+                                            <td>Transfer Bank (BRI)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="col-12 col-md-12 mt-3 mt-md-5">
-                                <div class="alert alert-success" role="alert">
-                                    <p class="card-text">Pemabayaran anda telah diterima. silahkan menunggu di rumah dokumen anda akan sampai beberapa saat lagi</p>
-                                </div>
+                            <p class="font-weight-light">Detail biaya dokumen</p>
+                            <div class="table-responsive">
+                                <table class="table table-light text-dark">
+                                    <tbody>
+                                        <tr>
+                                            <td><b>Biaya dokumen</b></td>
+                                            <td>Rp 15.0000</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Biaya admin</b></td>
+                                            <td>Rp 10.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Biaya logistik (pengiriman)</b></td>
+                                            <td>Rp 23.000</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Total</b></td>
+                                            <td>Rp 58.0000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="col-12 col-md-6 mt-3 mt-md-5">
-                                <div class="row d-flex justify-content-between">
-                                    <div class="col-6 col-md-3 col-lg-3 col-xl-3">
-                                        <a name="" id="" class="btn btn-lg btn-block btn-blue" href="<?= site_url('pg') ?>" role="button">Ke Beranda</a>
-                                    </div>
-                                </div>
+                            <div class="alert alert-success" role="alert">
+                                <p class="card-text">Pemabayaran anda telah diterima. silahkan menunggu di rumah dokumen anda akan sampai beberapa saat lagi</p>
                             </div>
-                        </div> <!-- end col-->
+
+                            <a name="" id="" class="btn btn-lg d-block d-md-inline btn-blue" href="<?= site_url('pg') ?>" role="button">Ke Beranda</a>
+                        </div>
                     </div>
                     <!-- end row -->
 
