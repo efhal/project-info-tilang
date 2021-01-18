@@ -106,7 +106,7 @@
 
                             <div class="col-12 text-center">
                                 <p class="text-primary">Sudah punya akun ? <a href="<?= site_url('login') ?>" class="text-primary ml-1"><b>Masuk</b></a></p>
-                                <p class="mt-2">Pengelolaan sistem informasi &copy;<a href="<?= site_url() ?>">infotilang.id</a> dikelola oleh © PT Melayani Cakrawala Nusantara</p>
+                                <p class="mt-2">Sistem informasi &copy;<a href="<?= site_url() ?>">infotilang.id</a> dikelola oleh © PT Melayani Cakrawala Nusantara</p>
                             </div> <!-- end col -->
 
                         </div>

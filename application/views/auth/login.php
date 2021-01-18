@@ -98,7 +98,7 @@
 
                             <div class="col-12 text-center">
                                 <p class="text-primary">Belum punya akun ? <a href="<?= site_url('signup') ?>" class="text-primary ml-1"><b>Daftar</b></a></p>
-                                <p class="mt-2">Pengelolaan sistem informasi &copy;<a href="<?= site_url() ?>">infotilang.id</a> dikelola oleh © PT Melayani Cakrawala Nusantara</p>
+                                <p class="mt-2">Sistem informasi &copy;<a href="<?= site_url() ?>">infotilang.id</a> dikelola oleh © PT Melayani Cakrawala Nusantara</p>
                             </div> <!-- end col -->
 
                         </div>

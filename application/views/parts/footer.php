@@ -5,7 +5,7 @@
                           2020 - <script>
                               document.write(new Date().getFullYear())
                           </script>
-                          Pengelolaan sistem informasi &copy;<a href="<?= site_url() ?>">infotilang.id</a> dikelola oleh © PT Melayani Cakrawala Nusantara
+                          Sistem informasi &copy;<a href="<?= site_url() ?>">infotilang.id</a> dikelola oleh © PT Melayani Cakrawala Nusantara
                       </div>
                       <div class="col-md-4">
                           <div class="text-md-right footer-links d-none d-sm-block">
