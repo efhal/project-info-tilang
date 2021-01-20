@@ -1,3 +1,3 @@
 #######################################
-SISTEM INFORMASI TILANG
+PROJECT SISTEM INFORMASI TILANG
 #######################################
